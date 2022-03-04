@@ -10,32 +10,38 @@
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Bebas+Neue"
+    />
     <link rel="stylesheet" href="styles.css" />
     <title>Ostrobothnia LAN association</title>
   </head>
   <body>
-    <nav class="nav-bar">
-      <div class="container">
-        <div class="logo">OLA</div>
-        <ul class="nav">
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Events</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
+    <nav class="nav-bar flex">
+      <div class="logo">OLA</div>
+      <ul class="nav flex">
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">Events</a>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>
+      </ul>
     </nav>
     <!----------------------HOME/HEADER--------------------------->
-    <header class="header">
-      <div class="container">
+    <div class="container">
+      <header class="header">
         <div>
           <h1>Our Association</h1>
           <p1>
@@ -43,66 +49,68 @@
             originally our association was named Carpella lan, coming from the
             fact that the LAN events where hosted at Carpella in Karperö.
           </p1>
+          <img src="lanpic.jpg" alt="lanpic" />
         </div>
-        <img src="lanpic.jpg" alt="lanpic" />
-      </div>
-    </header>
-    <!-----------------------------EVENT PAGE-------------------------->
-    <section class="events">
-      <div class="container">
+      </header>
+      <!-----------------------------EVENT PAGE-------------------------->
+      <section class="events flex">
+        <h2 class="events-header"> Coming Events </h2>
         <div class="event">
-          <h2><i class="fas fa-arrows-alt"></i> some box</h2>
-          <p>seomthignsomethingsomethingasdasdasdsdgsdgsdfgsdg</p>
+          <h3 class="event-header"> some box</h3>
+          <p>seomth ignsomethin gsomething asdasd sdsdgsdg sdfgsdg</p>
         </div>
 
         <div class="event">
-          <h2><i class="fas fa-arrows-alt"> </i>another box</h2>
-          <p>seomthignsomethingsomethingasdasdasdsdgsdgsdfgsdg</p>
+          <h3>another box</h3>
+          <p>seomt hignsom ething someth ingasdas dasd sdgsdgsd fgsdg</p>
         </div>
 
         <div class="event">
-          <h2><i class="fas fa-arrows-alt"></i>just a box</h2>
-          <p>seomthignsomethingsomethingasdasdasdsdgsdgsdfgsdg</p>
+          <h3></i>just a box</h2>
+          <p>seomt hignsom ethingso meth ingasda sdasdsdgs dgsd fgsdg</p>
         </div>
-      </div>
-    </section>
-    <!------*****************************CONTACT FORM***************************------>
-    <section id="Contact">
-      <h1 class="contact-header">Contact</h1>
-      <div class="Contact">
-        <div class="form contact">
-          <h3 class="get-in-touch">Let's talk!</h3>
-          <p class="lets-talk">
-            Send me an email directly through this form or get my contact
-            information below.
-          </p>
-          <form
-            action="https://formsubmit.co/jay_newcreek@protonmail.com"
-            method="POST"
-          >
-            <input
-              class="name"
-              type="text"
-              name="name"
-              placeholder="Name"
-              required
-            />
-            <input
-              class="email"
-              type="email"
-              name="email"
-              placeholder="email address"
-              required
-            />
-            <textarea class="text-input" placeholder="Your message."></textarea>
-            <input type="submit" value="Submit" class="submit" />
-          </form>
+      </section>
+      <!-------------------------CONTACT FORM---------------------->
+      <section id="Contact">
+        <!-- <h1 class="contact-header">Contact</h1> -->
+        <div class="Contact">
+          <div class="form contact">
+            <h2 class="get-in-touch">Let's talk!</h2>
+            <p class="lets-talk">
+              Send me an email directly through this form or get my contact
+              information below.
+            </p>
+            <form
+              action="https://formsubmit.co/jay_newcreek@protonmail.com"
+              method="POST"
+            >
+              <input
+                class="name"
+                type="text"
+                name="name"
+                placeholder="Name"
+                required
+              />
+              <input
+                class="email"
+                type="email"
+                name="email"
+                placeholder="email address"
+                required
+              />
+              <textarea
+                class="text-input"
+                placeholder="Your message."
+              ></textarea>
+              <input type="submit" value="Submit" class="submit" />
+            </form>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
     <!--------------------------FOOTER------------------------>
-    <footer class="Footer">
-      <ul class="ext-links" id="profile-link">
+    <footer class="footer flex">
+      <ul class="ext-links flex">
         <li>
           <a href="https://github.com/jaygoode" target="_blank"
             ><i class="fa-brands fa-github"></i

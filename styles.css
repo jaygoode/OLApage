@@ -1,8 +1,11 @@
 :root {
   /* colors */
   --clr-dark: 230 35% 7%;
-  --clr-medium: 230 75% 90%;
+  --clr-medium: 230 45% 30%;
   --clr-light: 0 0% 100%;
+  --radius: 10px;
+  --shadow-in: hsla(230, 75%, 11%, 0.925) 0px 50px 60px -12px inset,
+    hsla(231, 51%, 15%, 0.938) 0px 18px 36px -18px inset;
 
   /* font-sizes */
   --fs-900: 9.375rem;
@@ -15,8 +18,8 @@
   --fs-200: 0.875rem;
 
   /*font families*/
-  --ff-first: serif;
-  --ff-second: sans-serif;
+  --ff-first: monospace;
+  --ff-second: "Prompt" serif;
   --ff-third: sans-serif;
 }
 
@@ -43,10 +46,20 @@ picture {
   margin: 0;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
-ol[role="list"] {
+/* header stuff */
+h1,
+h2 {
+  text-align: center;
+}
+
+/* Remove list styles  */
+li {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-light);
 }
 
 /* Set core root defaults */
@@ -56,12 +69,26 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
   font-family: var(--ff-first);
   font-size: var(--fs-400);
-  background-color: var(hsl(var(--clr-dark)));
+  background-color: hsl(var(--clr-dark));
+  color: hsl(var(--clr-light));
   min-height: 100vh;
+  width: 100%;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+}
+
+section,
+header {
+  min-height: 100vh;
+}
+
+footer {
+  margin: 0px;
 }
 
 /* Make images easier to work with */
@@ -69,6 +96,8 @@ img,
 picture {
   max-width: 100%;
   display: block;
+  width: 200px;
+  height: auto;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -95,22 +124,46 @@ select {
   }
 }
 
+/*---------other specs-----------*/
+
+h1 {
+  font-size: var(--fs-500);
+}
+
+h2 {
+  font-size: var(--fs-500);
+}
+
+h3 {
+  font-size: var(--fs-300);
+}
+
+p {
+  font-family: var(--ff-second);
+  font-size: var(--fs-300);
+  word-wrap: break-word;
+}
+
+i {
+  margin-right: 1em;
+}
+
 /*--------------------------------*/
 /*------------UTILITY CLASSES------*/
 /*--------------------------------*/
 
 .flex {
   display: flex;
-  gap: var(--gap, 1rem);
+  /* gap: var(--gap, 1rem); */
 }
 
 .grid {
   display: grid;
-  gap: var(--gap, 1rem);
+  /* gap: var(--gap, 1rem); */
 }
 
 .container {
-  padding: 0 2em;
+  padding: 0 1em;
   margin: 0 auto;
   max-width: 80rem;
 }
@@ -143,6 +196,17 @@ select {
 /*------------NAVIGATION----------*/
 /*--------------------------------*/
 
+.nav-bar {
+  width: 100%;
+  background: hsl(var(--clr-medium));
+  justify-content: space-between;
+  display: none;
+}
+
+.nav {
+  gap: 2em;
+}
+
 /*--------------------------------*/
 /*------------HEADER--------------*/
 /*--------------------------------*/
@@ -155,10 +219,127 @@ select {
 /*------------EVENTS--------------*/
 /*--------------------------------*/
 
+.events {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  /* background-color: red; */
+}
+
+.event {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1em;
+  background-color: hsl(var(--clr-medium));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-in);
+}
+
+.event > p {
+  background-color: hsl(var(--clr-dark));
+  border-radius: var(--radius);
+  padding: 0.5em;
+}
+
+.lets-talk {
+  justify-content: center;
+}
 /*--------------------------------*/
 /*------------GET IN TOUCH------- */
 /*--------------------------------*/
 
+.Contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  min-height: 15rem;
+  max-width: 700px;
+  border-radius: var(--radius);
+  text-align: center;
+  margin: 0;
+  padding-top: 0.5rem;
+  background-color: hsl(var(--clr-medium));
+  box-shadow: var(--shadow-in);
+}
+
+.lets-talk {
+  margin-bottom: 0.5em;
+}
+
+.name,
+.email,
+.text-input {
+  width: 90%;
+  border-style: none;
+  box-shadow: none;
+  margin-bottom: 0.5rem;
+  margin-inline: 1em;
+  border-radius: 3px;
+  min-height: 2rem;
+  background-color: hsl(var(--clr-dark));
+  color: white;
+  box-shadow: var(--shadow-in);
+}
+
+.text-input {
+  min-height: 15rem;
+  background-color: hsl(var(--clr-dark));
+  color: white;
+  box-shadow: var(--shadow-in);
+}
+
+.submit {
+  padding: 0.3em 1em;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  background-color: hsl(var(--clr-dark));
+  color: hsl(var(--clr-light));
+  border-radius: var(--radius);
+  border: 1px solid rgb(22, 22, 22);
+  /* box-shadow: var(--shadow-in); */
+}
+
+.submit:hover,
+.submit:focus {
+  background-color: hsl(var(--clr-light));
+  color: hsl(var(--clr-dark));
+}
 /*--------------------------------*/
 /*------------FOOTER--------------*/
 /*--------------------------------*/
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  background-color: hsl(var(--clr-medium));
+}
+
+.ext-links {
+  justify-content: space-evenly;
+  padding: 0 1em;
+  margin: 0.5em;
+}
+
+.contact-info {
+  padding: 0 0.5em;
+  margin: 0;
+  font-size: var(--fs-200);
+}
+
+span {
+  color: hsl(var(--clr-light));
+}
